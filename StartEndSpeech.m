@@ -12,13 +12,12 @@ zero_crossing = cell(7,1);
 window_time =30*1e-3; % time 30 msec
 overlap_time =10*1e-3;     % time 10 msec
 % Read and store training data set Samples
-[train_signal{1,1},Fs] = wavread('H.2.wav');
-[train_signal{2,1},~] = wavread('H.3.wav');
-[train_signal{3,1},~] =  wavread('H.4.wav');
-[train_signal{4,1},~] = wavread('D.6.2.wav');
-[train_signal{5,1},~] = wavread('D.6.3.wav');
-[train_signal{6,1},~] = wavread('D.6.4.wav');
-[train_signal{7,1},~] = wavread('D.6.5.wav');
+%[train_signal{2,1},~] = wavread('H.3.wav');
+%[train_signal{3,1},~] =  wavread('H.4.wav');
+%[train_signal{4,1},~] = wavread('D.6.2.wav');
+%[train_signal{5,1},~] = wavread('D.6.3.wav');
+%[train_signal{6,1},~] = wavread('D.6.4.wav');
+%[train_signal{7,1},~] = wavread('D.6.5.wav');
 
 window_length =window_time*Fs;
 overlap_length = overlap_time*Fs;
@@ -206,7 +205,7 @@ zcsig = std(x_silence_zcr);
                
 %% Testing of test sample to get voiced and unvoiced  and silence frames
 
-    [y_test,Fs_test] = wavread('H.1.wav');
+    %[y_test,Fs_test] = wavread('H.1.wav');
     [b1,a1] =fir1(101,(60*2/1000),'high');
     y_filt1 = filter(b1,a1,y_test);
     % to check signal with noise uncomment the two lines below and run code
